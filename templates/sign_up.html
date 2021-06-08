@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+    </title>
+  <style>
+    h1 {text-align: center;
+      background-color: black;
+      color:whitesmoke;
+    }      
+
+    h3 {text-align: center;
+      background-color: black;
+      color:rgb(194, 161, 11);
+    } 
+      
+    body {text-align: left;
+      background-color: black;
+      color: whitesmoke;
+    }
+  </style>
+  <h1>Film Finder</h1>
+  <h3><i>Sign up to find your favorite movies!</i></h2>
+  </head>
+  <body>
+Please fill out this form to become a member.
+<form action="/users" method="POST">
+    <p>
+      First Name <input type="text" name="fname">
+    </p>
+    
+    <p>
+      Last Name <input type="text" name="lname">
+    </p>
+
+    <p>
+      Email <input type="text" name="email">
+    </p>
+
+    <p>
+      Password <input type="password" name="password">
+    </p>
+
+    <p>
+      Favorite Movie <input type="text" name="fav-movie">
+    </p>
+
+    <p>
+      Preferred Genres 
+      <br>  
+      <input type="checkbox" name="pref-genre" value="comedy"> 
+      <label>Comedy</label>
+      <input type="checkbox" name="pref-genre" value="musical"> 
+      <label>Musical</label>
+      <input type="checkbox" name="pref-genre" value="adventure"> 
+      <label>Adventure</label>
+      <input type="checkbox" name="pref-genre" value="romcom"> 
+      <label>Romantic Comedy</label>
+      <input type="checkbox" name="pref-genre" value="historical"> 
+      <label>Historical</label>
+      <br>
+      <input type="checkbox" name="pref-genre" value="documentary"> 
+      <label>Documentary</label>
+      <input type="checkbox" name="pref-genre" value="crime"> 
+      <label>Crime</label>
+      <input type="checkbox" name="pref-genre" value="horror"> 
+      <label>Horror</label>
+      <input type="checkbox" name="pref-genre" value="fantasy"> 
+      <label>Fantasy</label>
+      <input type="checkbox" name="pref-genre" value="action"> 
+      <label>Action</label>
+      <input type="checkbox" name="pref-genre" value="western"> 
+      <label>Western</label>
+    </p>
+
+    <p>
+      Favorite Director <input type="text" name="fav-director">
+    </p>
+
+    <p>
+      Favorite Writer <input type="text" name="fav_writer">
+    </p>
+
+    <p>
+      <input type="submit">
+    </p>
+
+
+</form>
+    <br>
+    <br>
+    <div class="image-container"><img src="https://aatfweb.files.wordpress.com/2017/06/film-1155439_960_720.jpg"></div>
+    <br>
+    <div><a href="/login">Already a member? Log in here!</a></div>
+    <br>
+    <div><a href="/movies">View all movies</a></div>
+      <br>
+    <div><a href="/users">View all users</a></div>
+    <br>
+  </body>
+</html>

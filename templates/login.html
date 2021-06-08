@@ -5,15 +5,52 @@
   <head>
     <title>
     </title>
+  <style>
+    h1 {text-align: center;
+      background-color: black;
+      color:whitesmoke;
+    }      
+
+    h3 {text-align: center;
+      background-color: black;
+      color:rgb(194, 161, 11);
+    } 
+      
+    body {text-align: center;
+      background-color: black;
+      color:rgb(194, 93, 11);
+    }
+  </style>
+  <h1>Film Finder</h1>
+  <h3><i>Your definitive source for a fun-filled movie night!</i></h2>
+  <body>
+<!--Find where your favorite movies live & discover new favorites all in one place!-->
+    <!-- <br> -->
   </head>
   <body>
-    <h1>Welcome to Film Finder!</h1>
     <br>
-    <h3>Sign up here:</h3>
+    <h2>Welcome back to Film Finder, friend!</h2>
     <br>
-    <form>
+    <h3>Log in here:</h3>
+    <br>
+    <form action="/login" method="POST">
+      <p>
+        Email <input type="text" name="email">
+      </p>
 
-      
+      <p>
+        Password <input type="password" name="password">
+      </p>
+
+      <p>
+        <input type="submit">
+      </p>
     </form>
+    <br>
+    <div class="image-container"></div><img src="/static/img/FilmProjectorFlipped.png"></div>
+    <br>
+    <!-- <br>
+    <div class="image-container"></div><img src="https://closler.org/wp-content/uploads/2019/02/film-reel.png"></div>
+    <br> -->
   </body>
 </html>
