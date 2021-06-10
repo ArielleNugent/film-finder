@@ -1,10 +1,14 @@
-"""Server for movie finder app."""
+"""Server for film finder app."""
 
 from flask import Flask, render_template, request, flash, session, redirect
 from model import connect_to_db
 import crud
 
+from jinja2 import StrictUndefined
+
 app = Flask(__name__)
+app.secret_key = "thisismysecretkey"
+app.jinja_env.undefined = StrictUndefined
 
 
 @app.route("/")
@@ -14,11 +18,28 @@ def homepage():
     return render_template("homepage.html")
 
 
-@app.route("/sign_up")
-def sign_up():
+@app.route("/signup")
+def render_signup():
     """View sign up page."""
 
-    return render_template("sign_up.html")
+    return render_template("signup.html")
+
+@app.route("/signup", methods=["POST"])
+def form_submission():
+    """Grabs form data submitted by user."""
+
+    fname = request.form.get('fname')
+    lname = request.form.get('lname')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    fav_movie = request.form.get('fav_movie')
+    pref_genre = request.form.get('pref_genre')
+    fav_director = request.form.get('fav_director')
+    fav_writer = request.form.get('fav_writer')
+
+    new_user = crud.create_user(fname, lname, email, password, fav_movie, pref_genre, fav_director, fav_writer)
+
+    return redirect("/profile")
 
 
 @app.route("/login")
@@ -26,6 +47,24 @@ def login():
     """View log-in page."""
 
     return render_template("login.html")
+
+
+@app.route("/profile")
+def display_profile():
+    """Shows a profile page to the user."""
+
+    return render_template("profile.html")
+
+
+@app.route("/profile", methods=["POST"])
+def get_login():
+    """Grabs the login info from user submission of login form."""
+
+    email = request.form.get("email")
+
+    password = request.form.get("password")
+
+    return redirect("/profile")
 
 
 @app.route("/movies")

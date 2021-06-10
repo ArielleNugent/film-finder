@@ -7,7 +7,12 @@ def create_user(fname, lname, email, password):
     user = User(fname=fname, 
                 lname=lname, 
                 email=email, 
-                password=password)
+                password=password,
+                fav_movie=fav_movie,
+                pref_genre=pref_genre,
+                fav_director=fav_director,
+                fav_writer=fav_writer)
+                #have these match form
 
     db.session.add(user)
     db.session.commit()
@@ -93,6 +98,17 @@ def get_movie_by_release_date(release_date):
     """Returns a movie by release date."""
 
     return Movie.query.get(release_date)     
+
+
+# def create_rating(user, movie, score):
+#     """Create and return a new rating."""
+
+#     rating = Rating(user=user, movie=movie, score=score)
+
+#     db.session.add(rating)
+#     db.session.commit()
+
+#     return rating
 
 
 if __name__ == '__main__':

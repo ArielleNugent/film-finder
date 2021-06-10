@@ -49,7 +49,7 @@ for n in range(10):
     email = f'user{n}@test.com'
     password = 'test'
 
-    user = crud.create_user(fname, lname, email, password)
+user = crud.create_user(fname, lname, email, password)
 
-    for _ in range(10):
-        random_movie = choice(movies_in_db)
+for _ in range(10):
+    random_movie = choice(movies_in_db)
