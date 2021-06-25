@@ -21,35 +21,45 @@ with open('data/movies.json') as f:
 movies_in_db = []
 for movie in movie_data:
     format = "%Y-%m-%d"
-    title, overview, poster_path, release_date = (movie["title"], 
-                                                  movie["overview"],
-                                                  movie["poster_path"],
-                                                  datetime.strptime(movie["release_date"],format))  #remove closing paren)
-                                                  #movie["genre"],
-                                                  #movie["director"],
-                                                  #movie["writer"],
-                                                  #movie["actor"])
+    title, overview, poster_path, release_date, location = (
+        movie["title"], 
+        movie["overview"],
+        movie["poster_path"],
+        datetime.strptime(movie["release_date"],format),
+        movie["location"])
+        #movie["genre"],
+        #movie["director"],
+        #movie["writer"],
+        #movie["actor"])
                                                   
-    
-    movie_to_add = crud.create_movie(title,
-                                     overview,
-                                     release_date, 
-                                     poster_path)
+    print("*"*10)
+    print(title)
+    print("*"*10)
+
+    db_movie = crud.create_movie(title, overview, release_date, poster_path, location)
+
+    # movie_to_add = crud.create_movie(title,
+    #                                  overview,
+    #                                  release_date, 
+    #                                  poster_path,
+    #                                  location)
                                      #genre,
                                      #director,
                                      #writer,
                                      #actor)
     
-    movies_in_db.append(movie_to_add)
+    # movies_in_db.append(movie_to_add)
+
+    movies_in_db.append(db_movie)
     
     
-for n in range(10):
-    fname = f'firstname{n}'
-    lname = f'lastname{n}'
-    email = f'user{n}@test.com'
-    password = 'test'
+# for n in range(10):
+#     fname = f'firstname{n}'
+#     lname = f'lastname{n}'
+#     email = f'user{n}@test.com'
+#     password = 'test'
 
-user = crud.create_user(fname, lname, email, password)
+# user = crud.create_user(fname, lname, email, password)
 
-for _ in range(10):
-    random_movie = choice(movies_in_db)
+# for _ in range(10):
+#     random_movie = choice(movies_in_db)

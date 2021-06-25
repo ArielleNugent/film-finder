@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>
+      {% block title %}{% endblock %}
     </title>
   <style>
     h1 {text-align: center;
@@ -18,26 +19,34 @@
       background-color: black;
       color:rgb(194, 93, 11);
     }
+    img.center {display: block;
+                margin-left: auto;
+                margin-right: auto;
+                height: 25%;
+                width: 25%;
+    }
+
   </style>
   <h1>Film Finder</h1>
   <h3><i>Your definitive source for a fun-filled movie night!</i></h2>
   </head>
   <body>
+    {% block body %}{% endblock %}
 Find where your favorite movies live & discover new favorites all in one place!
     <br>
     <br>
-    <div><a href="/login">LOG IN</a></div>
+    <div><a href="/login">Log in</a></div>
     <br>
     <br>
     <div class="image-container"><img src="https://aatfweb.files.wordpress.com/2017/06/film-1155439_960_720.jpg"></div>
     <br>
     <div>To track the movies you've watched and get tailored recommendations, create your profile!</div>
     <br>
-    <div><a href="/sign_up">SIGN UP</a></div>
+    <div><a href="/signup">Sign up</a></div>
     <br>
-    <div><a href="/movies">VIEW ALL MOVIES</a></div>
+    <div><a href="/movies">View All Movies</a></div>
       <br>
-    <div><a href="/users">VIEW ALL USERS</a></div>
+    <div><a href="/users">View All Users</a></div>
     <br>
   </body>
 </html>

@@ -1,16 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} -->
 {% block title %}All Movies{% endblock %}
 
 {% block body %}
   <h1>All Movies</h1>
 
-  <ul>
+  <div>
+    <form action="/netflix">
+      <button type="submit">Netflix</button>
+    </form>
+    <br>
+    <form action="/hulu">
+      <button type="submit">Hulu</button>
+    </form>
+    <br>
+    <form action="/amazon">
+      <button type="submit">Amazon</button>
+    </form>
+    <br>
+    <form action="/disney">
+      <button type="submit">Disney</button>
+    </form>
+    <br>
+    <form action="/hbo">
+      <button type="submit">HBO</button>
+    </form>
+  </div>
+    <br>
+  
     {% for movie in movies %}
-      <li>
+      <div>
         <a href="/movies/{{ movie.movie_id }}">
           {{ movie.title }}
         </a>
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+
 {% endblock %}

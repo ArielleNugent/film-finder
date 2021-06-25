@@ -1,30 +1,17 @@
-{% extends 'base.html' %}
-
-{% block title %}{{ movie.title }} - Details{% endblock %}
+{% extends 'base.html' %} -->
+{% block title %}All Movies{% endblock %}
 
 {% block body %}
-<h1>{{ movie.title }}</h1>
+  <h1>{{movie.title}}</h1>
 
-<p>
-  {{ movie.overview }}
-</p>
+  <h2>{{movie.overview}}</h2>
 
-{% if session.get('user_email') %}
+  <h3>{{movie.location}}</h3>
 
-<!-- <h2>Rate this movie</h2>
-<form action="/movies/{{ movie.movie_id }}/ratings" method="POST"> -->
-  <!-- <p>
-    Rating:
-    <select name="rating">
-      <option value="">Select rating</option>
-      {% for num in range(6) %}
-        <option value="{{ num }}">{{ num }}</option>
-      {% endfor %}
-    </select>
-  </p> -->
-  <p><input type="submit"></p>
-</form>
-{% endif %}
+  <h3>{{movie.release_date}}</h3>
 
-<img src="{{ movie.poster_path }}">
+  <img src={{movie.poster_path}} class="center">
+
+     
+
 {% endblock %}

@@ -11,30 +11,38 @@
       color:whitesmoke;
     }      
 
+    h2 {text-align: center;
+      /* background-color: black; */
+      color:rgb(194, 93, 11);
+    } 
+
     h3 {text-align: center;
       /* background-color: black; */
       color:rgb(194, 161, 11);
     } 
+
+    h4 {text-align: left;
+      /* background-color: black; */
+      color:rgb(194, 161, 11);
+    } 
       
-    body {text-align: center;
+    body {text-align: left;
       /* background-color: black; */
       color:rgb(194, 93, 11);
       background-image: url('/static/img/FilmProjectorFlipped.png');
     }
   </style>
   <h1>Film Finder</h1>
-  <h3><i>Your definitive source for a fun-filled movie night!</i></h2>
+  <h3><i>Your definitive source for a fun-filled movie night.</i></h2>
   <body>
 <!--Find where your favorite movies live & discover new favorites all in one place!-->
     <!-- <br> -->
   </head>
   <body>
-    <br>
-    <h2>Welcome back to Film Finder, friend!</h2>
-    <br>
-    <h3>Log in here:</h3>
-    <br>
-    <form action="/profile" method="POST">
+    <h2>Welcome back to Film Finder!</h2>
+    <h4>Log in:</h4>
+    <!--Changed form action below from "/profile" to "/handle-login"-->
+    <form action="/handle-login" method="POST">
       <p>
         Email <input type="text" name="email">
       </p>
@@ -48,6 +56,7 @@
       </p>
     </form>
     <br>
+    <div><a href="/signup">Not a member yet? Sign up here.</a></div>
     <!-- <div class="image-container"></div><img src="/static/img/FilmProjectorFlipped.png"></div>
     <br> -->
     <!-- <br>

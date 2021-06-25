@@ -1,18 +1,16 @@
 """CRUD operations."""
 from model import db, Movie, User, Preference, Location, User_Preference, User_Movie, Movie_Location, User_Location, connect_to_db
     
-def create_user(fname, lname, email, password):
+# from server import app
+
+def create_user(fname, lname, email, password, fav_movie=None, pref_genre=None, fav_director=None, fav_writer=None):
     """Create and return a new user."""
 
     user = User(fname=fname, 
                 lname=lname, 
                 email=email, 
-                password=password,
-                fav_movie=fav_movie,
-                pref_genre=pref_genre,
-                fav_director=fav_director,
-                fav_writer=fav_writer)
-                #have these match form
+                password=password)
+
 
     db.session.add(user)
     db.session.commit()
@@ -44,31 +42,37 @@ def get_user_by_full_name(fname, lname):
     return User.query.get(fname, lname)
 
 
-def get_user_by_name(fname):
+def get_user_by_fname(fname):
     """Returns a user by their first name."""
 
     return User.query.get(fname, lname)
 
 
-def get_user_by_name(lname):
+def get_user_by_lname(lname):
     """Returns a user by their first name."""
 
     return User.query.get(lname)
 
 
-def create_movie(title, overview, release_date, poster_path):
+def create_movie(title, overview, release_date, poster_path, location):
     """Create and return a new movie."""
+
+    # with app.app_context():
 
     movie = Movie(title=title,
                     overview=overview,
                     release_date=release_date,
-                    poster_path=poster_path)
+                    poster_path=poster_path,
+                    location=location)
                     # genre=genre,
                     # director=director,
                     # writer=writer,
                     # actor=actor)
     #release_date in format: YYYY-MM-DD
     #poster_path=image
+
+    # print("********************************************")
+    # print(movie)
 
     db.session.add(movie)
     db.session.commit()
@@ -80,6 +84,36 @@ def get_movies():
     """Returns all movies."""
 
     return Movie.query.all()
+
+
+def get_movies_on_netflix():
+    """Returns movies on Netflix."""
+
+    return Movie.query.filter_by(location="Netflix").all()
+
+
+def get_movies_on_hulu():
+    """Returns movies on Hulu."""
+
+    return Movie.query.filter_by(location="Hulu").all()
+
+
+def get_movies_on_amazon():
+    """Returns movies on Amazon."""
+
+    return Movie.query.filter_by(location="Amazon").all()
+
+
+def get_movies_on_disney():
+    """Returns movies on Disney."""
+
+    return Movie.query.filter_by(location="Disney").all()
+
+
+def get_movies_on_hbo():
+    """Returns movies on HBO."""
+
+    return Movie.query.filter_by(location="HBO").all()
 
 
 def get_movie_by_id(movie_id):
@@ -111,6 +145,6 @@ def get_movie_by_release_date(release_date):
 #     return rating
 
 
-if __name__ == '__main__':
-    from server import app
-    connect_to_db(app)
+# if __name__ == '__main__':
+#     from server import app
+#     connect_to_db(app)

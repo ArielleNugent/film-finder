@@ -22,7 +22,7 @@ class User(db.Model):
 
 
 class Movie(db.Model):
-    """Many movies, given a movie_id, including: title, overview, genre, 
+    """Many movies, creates a movie_id, including: title, overview, genre, 
     director, writer, actor, release_date, and poster_path."""
 
     __tablename__ = 'movies'
@@ -34,6 +34,7 @@ class Movie(db.Model):
     overview = db.Column(db.String)
     release_date = db.Column(db.DateTime)
     poster_path = db.Column(db.String)
+    location = db.Column(db.String)
     genre = db.Column(db.String(30),
                         nullable=True)
     director = db.Column(db.String(50),
@@ -178,7 +179,7 @@ if __name__ == '__main__':
     # BE SURE TO CREATE ALL TABLES ----> 
     #In this order:
     # python3 -i model.py
-    db.create_all()
-    # test_user = User(email='test@test.test', password='test')
-    # db.session.add(test_user)
-    db.session.commit()
+    # db.create_all()
+    # # test_user = User(email='test@test.test', password='test')
+    # # db.session.add(test_user)
+    # db.session.commit()
