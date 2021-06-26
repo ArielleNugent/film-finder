@@ -2,13 +2,47 @@
 {% block title %}All Movies{% endblock %}
 
 {% block body %}
+
+<style>
+  h1 {text-align: center;
+    background-color: black;
+    color:whitesmoke;
+  }      
+
+  h2 {text-align: center;
+      background-color: black;
+      color:rgb(231, 211, 24);
+    } 
+
+  h3 {text-align: center;
+      background-color: black;
+      color:rgba(255, 136, 0, 0.925);
+  } 
+
+  h4 {text-align: center;
+      background-color: black;
+      color:rgb(218, 228, 163);
+    } 
+    
+  body {text-align: center;
+    background-color: black;
+    color:rgb(240, 245, 174);
+  }
+  img {display: block;
+        margin-right: auto;
+        margin-left: auto;
+        height: 75%;
+        width: 75%;
+  }
+  </style>
+
   <h1>{{movie.title}}</h1>
 
-  <h2>{{movie.overview}}</h2>
+  <h3>{{movie.overview}}</h3>
 
-  <h3>{{movie.location}}</h3>
+  <h2>Viewable on: {{movie.location}}</h2>
 
-  <h3>{{movie.release_date}}</h3>
+  <!-- <h3>{{movie.release_date}}</h3> -->
 
   <img src={{movie.poster_path}} class="center">
 

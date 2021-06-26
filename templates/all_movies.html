@@ -1,28 +1,142 @@
-{% extends 'base.html' %} -->
+{% extends 'base.html' %}
 {% block title %}All Movies{% endblock %}
 
 {% block body %}
   <h1>All Movies</h1>
 
+  <style>
+    .NetflixButton {
+	    background:linear-gradient(to bottom, #000000 5%, #ff0000 100%);
+	    background-color:#ff0000;
+	    border-radius:15px;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Verdana;
+	    font-size:23px;
+	    padding:15px 15px;
+	    text-decoration:none;
+	    text-shadow:0px 0px 0px #000000;
+}
+    .NetflixButton:hover {
+	    background:linear-gradient(to bottom, #ff0000 5%, #000000 100%);
+	    background-color:#000000;
+}
+    .NetflixButton:active {
+	    position:relative;
+	    top:1px;
+}
+
+    .HuluButton {
+	    background:linear-gradient(to bottom, #000000 5%, #00ff11 100%);
+	    background-color:#00ff11;
+	    border-radius:15px;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Verdana;
+	    font-size:23px;
+	    padding:16px 31px;
+	    text-decoration:none;
+	    text-shadow:0px 1px 0px #000000;
+}
+    .HuluButton:hover {
+	    background:linear-gradient(to bottom, #59ff00 5%, #000000 100%);
+	    background-color:#2f7a07;
+}
+    .HuluButton:active {
+	    position:relative;
+	    top:1px;
+}
+
+    .AmazonButton {
+	    background:linear-gradient(to bottom, #ffffff 5%, #cc7422 60%);
+	    background-color:#d69c44;
+	    border-radius:15px;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#000000;
+	    font-family:Verdana;
+	    font-size:23px;
+	    padding:15px 15px;
+	    text-decoration:none;
+	    text-shadow:0px 1px 0px #000000;
+}
+    .AmazonButton:hover {
+	    background:linear-gradient(to bottom, #e79a09 5%, #ffffff 100%);
+	    background-color:#d4801f;
+}
+    .AmazonButton:active {
+	    position:relative;
+	    top:1px;
+}
+
+    .DisneyButton {
+	    background:linear-gradient(to bottom, #ffffff 5%, #001aff 60%);
+	    background-color:#ffffff;
+	    border-radius:15px;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#ffffff;
+	    font-family:Verdana;
+	    font-size:23px;
+	    padding:15px 15px;
+	    text-decoration:none;
+	    text-shadow:0px 1px 0px #000000;
+}
+    .DisneyButton:hover {
+	    background:linear-gradient(to bottom, #0400ff 5%, #ffffff 100%);
+	    background-color:#000000;
+}
+    .DisneyButton:active {
+	    position:relative;
+	    top:1px;
+}
+
+    .HBOButton {
+	    background:linear-gradient(to bottom, #ffffff 5%, #a60eec 60%);
+	    background-color:#000000;
+	    border-radius:15px;
+	    display:inline-block;
+	    cursor:pointer;
+	    color:#000000;
+	    font-family:Verdana;
+	    font-size:23px;
+	    padding:15px 15px;
+	    text-decoration:none;
+	    text-shadow:0px 1px 0px #000000;
+}
+    .HBOButton:hover {
+	    background:linear-gradient(to bottom, #b803ff 5%, #ffffff 100%);
+	    background-color:#000000;
+}
+    .HBOButton:active {
+	    position:relative;
+	    top:1px;
+}
+  </style>
+
   <div>
     <form action="/netflix">
-      <button type="submit">Netflix</button>
+      <button type="submit" class="NetflixButton">Netflix</button>
     </form>
     <br>
+
     <form action="/hulu">
-      <button type="submit">Hulu</button>
+      <button type="submit" class="HuluButton">Hulu</button>
     </form>
     <br>
+
     <form action="/amazon">
-      <button type="submit">Amazon</button>
+      <button type="submit" class="AmazonButton">Amazon</button>
     </form>
     <br>
     <form action="/disney">
-      <button type="submit">Disney</button>
+      <button type="submit" class="DisneyButton">Disney</button>
     </form>
     <br>
     <form action="/hbo">
-      <button type="submit">HBO</button>
+      <button type="submit" class="HBOButton">HBO</button>
     </form>
   </div>
     <br>
