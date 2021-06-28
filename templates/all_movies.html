@@ -2,14 +2,20 @@
 {% block title %}All Movies{% endblock %}
 
 {% block body %}
-  <h1>All Movies</h1>
+  <h1>ALL MOVIES</h1>
 
   <style>
+
+    body {
+      text-align: center;
+      background-color: black;
+      color: whitesmoke;
+}
     .NetflixButton {
 	    background:linear-gradient(to bottom, #000000 5%, #ff0000 100%);
 	    background-color:#ff0000;
 	    border-radius:15px;
-	    display:inline-block;
+	    display:inline;
 	    cursor:pointer;
 	    color:#ffffff;
 	    font-family:Verdana;
@@ -26,12 +32,11 @@
 	    position:relative;
 	    top:1px;
 }
-
     .HuluButton {
 	    background:linear-gradient(to bottom, #000000 5%, #00ff11 100%);
 	    background-color:#00ff11;
 	    border-radius:15px;
-	    display:inline-block;
+	    display:inline;
 	    cursor:pointer;
 	    color:#ffffff;
 	    font-family:Verdana;
@@ -48,12 +53,11 @@
 	    position:relative;
 	    top:1px;
 }
-
     .AmazonButton {
 	    background:linear-gradient(to bottom, #ffffff 5%, #cc7422 60%);
 	    background-color:#d69c44;
 	    border-radius:15px;
-	    display:inline-block;
+	    display:inline;
 	    cursor:pointer;
 	    color:#000000;
 	    font-family:Verdana;
@@ -70,12 +74,11 @@
 	    position:relative;
 	    top:1px;
 }
-
     .DisneyButton {
 	    background:linear-gradient(to bottom, #ffffff 5%, #001aff 60%);
 	    background-color:#ffffff;
 	    border-radius:15px;
-	    display:inline-block;
+	    display:inline;
 	    cursor:pointer;
 	    color:#ffffff;
 	    font-family:Verdana;
@@ -92,12 +95,11 @@
 	    position:relative;
 	    top:1px;
 }
-
     .HBOButton {
 	    background:linear-gradient(to bottom, #ffffff 5%, #a60eec 60%);
 	    background-color:#000000;
 	    border-radius:15px;
-	    display:inline-block;
+	    display:inline;
 	    cursor:pointer;
 	    color:#000000;
 	    font-family:Verdana;
@@ -116,37 +118,41 @@
 }
   </style>
 
-  <div>
-    <form action="/netflix">
-      <button type="submit" class="NetflixButton">Netflix</button>
-    </form>
+  <h3>Choose your film-viewing platform to see what films are available to watch:</h3>
+  <br>
+  <body>
+    <div>
+      <form action="/netflix">
+        <button type="submit" class="NetflixButton">Netflix</button>
+      </form>
+      <br>
+      <form action="/hulu">
+        <button type="submit" class="HuluButton">Hulu</button>
+      </form>
+      <br>
+      <form action="/amazon">
+        <button type="submit" class="AmazonButton">Amazon</button>
+      </form>
+      <br>
+      <form action="/disney">
+        <button type="submit" class="DisneyButton">Disney</button>
+      </form>
+      <br>
+      <form action="/hbo">
+        <button type="submit" class="HBOButton">HBO</button>
+      </form>
+    </div>
     <br>
-
-    <form action="/hulu">
-      <button type="submit" class="HuluButton">Hulu</button>
-    </form>
     <br>
-
-    <form action="/amazon">
-      <button type="submit" class="AmazonButton">Amazon</button>
-    </form>
     <br>
-    <form action="/disney">
-      <button type="submit" class="DisneyButton">Disney</button>
-    </form>
     <br>
-    <form action="/hbo">
-      <button type="submit" class="HBOButton">HBO</button>
-    </form>
-  </div>
-    <br>
-  
     {% for movie in movies %}
       <div>
         <a href="/movies/{{ movie.movie_id }}">
           {{ movie.title }}
         </a>
       </div>
+    </body>
     {% endfor %}
 
 {% endblock %}

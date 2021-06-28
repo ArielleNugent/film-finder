@@ -31,21 +31,102 @@
         width: 100%;
   }
 
+    .nav {background-color:rgb(145, 94, 0);
+          padding: 15px;
+          list-style-type: none;
+          text-align: center;
+    }
+
+    .nav li {
+        display: inline-block;
+        font-size: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .topnav input[type=text] {
+      float: center;
+      padding: 6px;
+      border: none;
+      margin-top: 8px;
+      margin-right: 16px;
+      font-size: 17px;
+}
+    .logInButton {
+      background:linear-gradient(to bottom, #ff8400 5%, #ffd014 100%);
+      background-color:#ff8400;
+      border-radius:25px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Trebuchet MS;
+      font-size:17px;
+      font-weight:bold;
+      padding:16px 46px;
+      text-decoration:none;
+      text-shadow:0px 0px 0px #ffa914;
+  }
+    .logInButton:hover {
+      background:linear-gradient(to bottom, #ffd014 5%, #ff8400 100%);
+      background-color:#ffd014;
+  }
+    .logInButton:active {
+      position:relative;
+      top:1px;
+  }
+
+  .signUpButton {
+      background:linear-gradient(to bottom, #ff8400 5%, #ffd014 100%);
+      background-color:#ff8400;
+      border-radius:25px;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Trebuchet MS;
+      font-size:17px;
+      font-weight:bold;
+      padding:16px 46px;
+      text-decoration:none;
+      text-shadow:0px 0px 0px #ffa914;
+  }
+    .signUpButton:hover {
+      background:linear-gradient(to bottom, #ffd014 5%, #ff8400 100%);
+      background-color:#ffd014;
+  }
+    .signUpButton:active {
+      position:relative;
+      top:1px;
+  }
+
   </style>
 
   <h1>Film Finder</h1>
+
+  <a href="/login" class="logInButton">LOG IN</a>
+  <a href="/signup" class="signUpButton">SIGN UP</a>
+
   <h3><i>Your definitive source for a fun-filled movie night!</i></h3>
-  <br>
   <h4>Find where your favorite movies live & discover new favorites all in one place!</h4>
+  <ul class="nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/movies">All Movies</a></li>
+    <li><a href="/users">Film Friends</a></li>
+  </ul>
   </head>
   <body>
-    <div><a href="/login">Log in here!</a></div>
+    <!-- <br>
+    <div><a href="/signup">Sign Up</a></div>
+    <br>
+    <div><a href="/login">Log In</a></div>
+    <br> -->
+    <div class="topnav">
+      Movie Search: <input type="text" placeholder="Search">
+    </div>
     <br>
     <div class="image-container"><img src="https://aatfweb.files.wordpress.com/2017/06/film-1155439_960_720.jpg"></div>
     <br>
-    <div>To track the movies you've watched and get tailored recommendations, create your profile!</div>
-    <br>
-    <div><a href="/signup">Sign Up Here!</a></div>
+    <div>To track the movies you've watched and get tailored recommendations, 
+    <br>create your profile by clicking on the sign up button above.</div>
     <br>
     <div><a href="/movies">View All Movies</a></div>
       <br>

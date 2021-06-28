@@ -10,6 +10,26 @@ app = Flask(__name__)
 app.secret_key = "thisismysecretkey"
 app.jinja_env.undefined = StrictUndefined
 
+# import requests
+
+# url = "https://ivaee-internet-video-archive-entertainment-v1.p.rapidapi.com/entertainment/search/"
+
+# headers = {
+#     'content-type': "application/json",
+#     'x-rapidapi-key': "a0dc53d652msh37da5d9f9363f06p1565c6jsn4d98e0d51aa7",
+#     'x-rapidapi-host': "ivaee-internet-video-archive-entertainment-v1.p.rapidapi.com"
+#     }
+
+# response = requests.request("GET", url, headers=headers)
+
+# print(response.text)
+
+# @app.route("/search")
+# def search():
+#     """Search for movies."""
+
+#     return render_template("search.html")
+
 
 @app.route("/")
 def homepage():
@@ -87,7 +107,7 @@ def display_profile():
     return render_template("profile.html")
 
 
-@app.route("/handle-login", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def get_login():
     """Grabs the login info from user submission of login form."""
 
