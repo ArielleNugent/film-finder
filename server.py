@@ -67,7 +67,7 @@ def login():
 #         flash(f"Incorrect email and password combination entered. 
 #         Please try again.")
 #         return redirect("/login")
-###CHECK THIS###
+
 
 
 
@@ -152,7 +152,7 @@ def get_hbo_movies():
     return render_template("all_movies.html", movies=movies)
 
 
-# step 1: add location to movies #DONE
+# step 1: add location to movies
 # step 2: seed "movies" database with movies.json
 # step 3: populate the page with the movies in your database 
  
